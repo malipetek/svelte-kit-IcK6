@@ -1,4 +1,12 @@
 <script>
+	import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
+
+  // Create a store and update it when necessary...
+  const session = writable({});
+  // ...and add it to the context for child components to access
+  setContext('session', session);
+
 	import Header from './Header.svelte';
 	import './styles.css';
 </script>
